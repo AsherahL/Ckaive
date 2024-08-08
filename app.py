@@ -1,5 +1,3 @@
-
-
 import streamlit as st
 st.title("WELCOME")
 name = st.text_input("Enter your name")
@@ -31,7 +29,7 @@ if name:
         }
 
         .chat-header {
-            font-family: 'Georgia', serif; /* Change font for header */
+            font-family: 'Elegant', serif; /* Change font for header */
             font-size: 24px;
             font-weight: bold;
             color: #333;
@@ -39,7 +37,7 @@ if name:
         }
 
         .chat-messages {
-            font-family: 'Courier New', monospace; /* Change font for chat messages */
+            font-family: 'Elegant', monospace; /* Change font for chat messages */
             font-size: 16px;
             color: #555;
             max-height: 300px;
@@ -62,7 +60,7 @@ if name:
         .chat-button {
             margin-top: 10px;
             width: 100%;
-            font-family: 'Tahoma', sans-serif; /* Change font for button */
+            font-family: 'Elegant', sans-serif; /* Change font for button */
             font-size: 16px;
             padding: 10px;
             background-color: #4CAF50;
