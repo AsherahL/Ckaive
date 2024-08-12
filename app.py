@@ -37,33 +37,6 @@ html_content = """
             color: white;
             padding: 10px;
         }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>MediCore</h1>
-        <p>Hi, I'm Medi! Here to help you.</p>
-    </header>
-    <main>
-        <blockquote cite="Lisa Olivera">
-            "Just because no one else can heal or do your inner work for you doesn't mean you can, should, or need to do it alone."
-        </blockquote>
-        <ul class="features">
-            <li>Symptom Checking</li>
-            <li>24/7 Availability</li>
-            <li>100% Confidentiality</li>
-        </ul>
-        <button>Sign Up</button>
-    </main>
-    <footer>
-        <p>Your mental health matters!</p>
-    </footer>
-</body>
-</html>
-"""
-
-st.markdown(html_content, unsafe_allow_html=True)
-
 
 # Display motivational messages
 st.markdown('<div class="centered-text">Daily Motivation 💬</div>', unsafe_allow_html=True)
