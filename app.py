@@ -1,19 +1,56 @@
 import streamlit as st
+
+# Streamlit Title
 st.title("WELCOME")
+
+# Text Input for Name
 name = st.text_input("Enter your name")
 if name:
-  st.write(f"Hello, {name}! Welcome to the app")
+    st.write(f"Hello, {name}! Welcome to the app")
 
+# HTML Content using st.markdown
+html_content = """
 <!DOCTYPE html>
 <html>
 <head>
     <title>MediCore Chatbot</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+        }
+        blockquote {
+            font-style: italic;
+            margin: 20px;
+        }
+        .features {
+            list-style: none;
+            padding: 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>MediCore</h1>
-        '<p>Hi, I'm Medi! Here to help you.</p>'
+        <p>Hi, I'm Medi! Here to help you.</p>
     </header>
     <main>
         <blockquote cite="Lisa Olivera">
@@ -29,49 +66,12 @@ if name:
     <footer>
         <p>Your mental health matters!</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
+"""
 
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f0f0;
-}
+st.markdown(html_content, unsafe_allow_html=True)
 
-header {
-    background-color: #3498db;
-    color: white;
-    padding: 20px;
-}
-
-blockquote {
-    font-style: italic;
-    margin: 20px;
-}
-
-.features {
-    list-style: none;
-    padding: 0;
-}
-
-button {
-    background-color: #3498db;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-footer {
-    background-color: #3498db;
-    color: white;
-    padding: 10px;
-}
-
-// script.js
-// Add JavaScript for chatbot functionality, button clicks, etc.
 
 
 
