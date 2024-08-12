@@ -13,7 +13,7 @@ if name:
 <body>
     <header>
         <h1>MediCore</h1>
-        <p>Hi, I'm Medi! Here to help you.</p>
+        '<p>Hi, I'm Medi! Here to help you.</p>'
     </header>
     <main>
         <blockquote cite="Lisa Olivera">
