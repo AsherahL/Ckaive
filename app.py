@@ -110,6 +110,51 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+from PIL import Image
+
+def main():
+    # Set page configuration
+    st.set_page_config(
+        page_title="MediCore Chatbot",
+        page_icon="😊",
+        layout="centered",
+        initial_sidebar_state="collapsed"
+    )
+
+    # Load background image (optional)
+    # background_img = Image.open("background.jpg")
+    # st.image(background_img, use_column_width=True)
+
+    # Header
+    st.title("MediCore")
+    st.subheader("Hi, I am Medi. Your empathetic mental health companion")
+
+    # Feeling buttons
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        st.button("Feeling Anxious")
+    with col2:
+        st.button("Feeling Depressed")
+    with col3:
+        st.button("Feeling Stressed")
+    with col4:
+        st.button("Trouble Sleeping")
+
+    # Chat history
+    st.text_area("Chat History", height=200)
+
+    # User input
+    user_input = st.text_input("Type your message")
+
+    # Footer
+    st.markdown("---")
+    st.text("Created by the Innovative Sparks. This chatbot does not replace human interaction. Seek help from nearby facilities.")
+
+    # Custom CSS (optional)
+    st.markdown('<style>body {background-color: #f0f0f0;}</style>', unsafe_allow_html=True)
+
+if __name__ == "__main__":
+    main()
 
 
 
