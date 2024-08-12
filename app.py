@@ -61,6 +61,20 @@ html_content = """
 </body>
 </html>
 """
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+.chatbot-container {
+    background-color: #ffffff; /* White container */
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
 
 st.markdown(html_content, unsafe_allow_html=True)
 
