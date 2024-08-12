@@ -13,10 +13,10 @@ st.markdown("""
 
 # Sidebar for mood checkboxes
 st.sidebar.title("How do you feel today?")
-feeling_anxious = st.sidebar.checkbox("Feeling Anxious")
-feeling_depressed = st.sidebar.checkbox("Feeling Depressed")
-feeling_stressed = st.sidebar.checkbox("Feeling Stressed")
-trouble_sleeping = st.sidebar.checkbox("Trouble Sleeping")
+feeling_anxious = st.sidebar.checkbox("😔 Feeling Anxious")
+feeling_depressed = st.sidebar.checkbox("😞 Feeling Depressed")
+feeling_stressed = st.sidebar.checkbox("😓 Feeling Stressed")
+trouble_sleeping = st.sidebar.checkbox("🛌 Trouble Sleeping")
 
 Chat_history = st.sidebar.title("Chat History")
 st.markdown(
