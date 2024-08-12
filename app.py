@@ -1,99 +1,81 @@
 import streamlit as st
 
-# HTML Content using st.markdown
-html_content = """
-<!DOCTYPE html>
-<html>
-<head>
-    <title>MediCore Chatbot</title>
-    <style>
-        body {
-            font-family: Elegant, sans-serif;
-            text-align: center;
-            background-color: #f0f0f0;
-        }
-        header {
-            background-color: #3498db;
-            color: white;
-            padding: 20px;
-        }
-        blockquote {
-            font-style: italic;
-            margin: 20px;
-        }
-        .features {
-            list-style: none;
-            padding: 0;
-        }
-        button {
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-        }
-        footer {
-            background-color: #3498db;
-            color: white;
-            padding: 10px;
-        }
+# Streamlit layout
+st.set_page_config(page_title="MediCore - Empathetic Mental Health Companion", layout="wide")
 
-# Display motivational messages
-st.markdown('<div class="centered-text">Daily Motivation 💬</div>', unsafe_allow_html=True)
-st.markdown('<div class="centered-text">You are stronger than you think. Take it one step at a time.</div>', unsafe_allow_html=True)
+st.markdown("""
+<style>
+.main {
+    background-color: #87CEEA;
+}
+</style>
+""", unsafe_allow_html=True)
 
-# Title and welcome message
-st.title("MediCore Chatbot 💡")
-st.write("Welcome to MediCore! I’m Medi, your digital mental health companion — here to support you with empathetic conversations.")
+# Sidebar for mood checkboxes
+st.sidebar.title("How do you feel today?")
+feeling_anxious = st.sidebar.checkbox("Feeling Anxious")
+feeling_depressed = st.sidebar.checkbox("Feeling Depressed")
+feeling_stressed = st.sidebar.checkbox("Feeling Stressed")
+trouble_sleeping = st.sidebar.checkbox("Trouble Sleeping")
 
-# Sidebar for selecting symptoms
-st.sidebar.subheader('Symptom Checker 🩺')
-selected_symptom = st.sidebar.radio(
-    "How do you feel today?",
-    ('😔 Feeling Anxious', '😞 Feeling Depressed', '😓 Feeling Stressed', '🛌 Trouble Sleeping', '🤕 Physical Symptoms')
-)
-
-# Main content form for asking questions
-with st.form(key='question_form'):
-    question = st.text_input("How can I help you?")
-    submit_button = st.form_submit_button(label='Send')
-
-# Handle form submission
-if submit_button:
-    if question:
-        # Get response from the chatbot based on the question and selected symptoms
-        answer = get_response(selected_symptom, question)
-        st.write("### Answer")
-        st.write(answer)
-        # Play a sound notification after getting the answer
-        playsound('notification_sound.mp3')
-    else:
-        st.write("Please enter a question.")
-
-# Footer with additional information
+Chat_history = st.sidebar.title("Chat History")
 st.markdown(
     """
-    <hr>
-    <footer>
-    <div class="centered-text">
-    <p>Created by the Innovative Sparks. This chatbot does not replace human interaction. Seek help from nearby facilities.</p>
+    <style>
+    
+    </style>
+    """
+)
+# Chat interface
+st.title("MediCore")
+
+# Chat history container
+chat_history = st.empty()
+
+# Placeholder for chat history
+messages = []
+
+# User input
+user_input = st.chat_input("")
+
+# Display the chat history
+with chat_history.container():
+    for message in messages:
+        st.write(message)
+
+# Footer
+st.markdown(
+    """
+    <style>
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 336px; /* Adjust this value to match the width of your sidebar */
+        width: calc(100% - 336px); /* Adjust this value to match the width of your sidebar */
+        text-align: center; /* Center text within the available width */
+        color: grey;
+        padding: 10px;
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        
+    }
+    </style>
+    <div class="footer">
+        Created by the Innovative Sparks. This chatbot does not replace human interaction. Seek help from nearby facilities.
     </div>
-    </footer>
     """,
     unsafe_allow_html=True
 )
 
-from PIL import Image
+custom_css = """
+<style>
+.sidebar .sidebar-content {
+    background-color: #44B3E0;
+    
+}
+</style>
+"""
 
-def main():
-    # Set page configuration
-    st.set_page_config(
-        page_title="MediCore Chatbot",
-        page_icon="😊",
-        layout="centered",
-        initial_sidebar_state="collapsed"
-    )
-
-   
+# Apply the custom CSS
+st.markdown(custom_css, unsafe_allow_html=True)
 
 
