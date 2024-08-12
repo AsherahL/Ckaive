@@ -1,13 +1,5 @@
 import streamlit as st
 
-# Streamlit Title
-st.title("WELCOME")
-
-# Text Input for Name
-name = st.text_input("Enter your name")
-if name:
-    st.write(f"Hello, {name}! Welcome to the app")
-
 # HTML Content using st.markdown
 html_content = """
 <!DOCTYPE html>
