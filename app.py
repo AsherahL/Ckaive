@@ -60,7 +60,7 @@ html_content = """
     </footer>
 </body>
 </html>
-"""
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0; /* Light gray background */
@@ -74,7 +74,7 @@ body {
     margin: 20px auto;
     max-width: 600px;
 }
-
+"""
 
 st.markdown(html_content, unsafe_allow_html=True)
 
